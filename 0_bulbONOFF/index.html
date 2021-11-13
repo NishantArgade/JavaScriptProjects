@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bulb on off</title>
+	<style>
+		body {
+			background-color: black;
+		}
+
+		.bulb {
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+			width: 400px;
+			height: 400px;
+			/* //for center image */
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.bulbOFF {
+			background-image: url(BulbOff.png);
+		}
+
+		.bulbON {
+			background-image: url(BulbON.png);
+
+		}
+	</style>
+</head>
+
+<body>
+	<div class="bulb bulbOFF">
+
+	</div>
+</body>
+<script>
+	let bulb = document.querySelector('.bulb');
+	bulb.addEventListener('click', () => {
+
+		// if (bulb.classList.contains('bulbOFF')) {
+
+		// 	bulb.classList.remove('bulbOFF')
+		// 	bulb.classList.add('bulbON');
+		// }
+		// else {
+		// 	bulb.classList.remove('bulbON')
+		// 	bulb.classList.add('bulbOFF');
+		// }
+		//----- OR ------------
+		bulb.classList.toggle('bulbOFF');
+		bulb.classList.toggle('bulbON');
+
+	});
+</script>
+
+</html>

@@ -1,0 +1,83 @@
+
+// This type of scrolling effect used in Instagram,facebook,some photoes web site etc....
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<title>UltimateScrollEffect</title>
+
+	<style>
+		.boxesContainer {
+			width: 70%;
+			height: auto;
+			background-color: rgba(193, 193, 202, 0.253);
+			padding: 15px 20px 5px 20px;
+		}
+
+		.Box {
+			background-color: rgba(105, 211, 230, 0.582);
+			width: 100%;
+			height: 150px;
+			padding: 5px 18px;
+			margin-bottom: 25px;
+			border-radius: 30px;
+		}
+
+		p {
+			font-size: 18px;
+		}
+	</style>
+</head>
+
+<body>
+  
+	<div class="container boxesContainer">
+
+		<!-- --- data added here dynamicaly ---- -->
+	</div>
+
+</body>
+<script>
+	let atTimeGetData = 4;
+	let pageNo = 1;
+	let no = 1;
+	let boxesContainer = document.querySelector('.boxesContainer');
+
+	async function addData() {
+
+		let response = await fetch(`https://jsonplaceholder.typicode.com/posts?_page=$(${pageNo})$_limit=$(${atTimeGetData})`);
+		let res = await response.json();
+		// console.log(res);
+
+		for (let obj of res) {
+			let str = `<div class="Box">
+						 <span class="blogCount">${no++}</span>
+							<h4>Box Content</h4>
+							<p>
+							${(obj.title)}	
+							</p>
+						</div>`;
+			boxesContainer.insertAdjacentHTML('beforeend', str);
+		}
+	}
+
+	addData();
+	window.addEventListener('scroll', () => {
+		const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
+		if (clientHeight + scrollTop >= scrollHeight) {
+			setTimeout(() => {
+				addData();
+
+			}, 25);
+		}
+	});
+
+</script>
+
+</html>

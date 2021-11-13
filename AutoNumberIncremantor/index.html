@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>NumberIncrementor</title>
+	<style>
+		.mainBox {
+			background-color: gainsboro;
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			width: 100%;
+			height: 300px;
+
+			/* //for set image extactly at center */
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.projectCompleted,
+		.HappyClient,
+		.onGoingProject {
+			font-size: 2.5rem;
+			text-align: center;
+			margin-top: 10px;
+		}
+
+		.icon {
+			text-align: center;
+		}
+		
+		.fa {
+			color: tomato;
+			text-align: center;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="mainBox">
+
+
+		<div class="icon">
+			<i class="fa fa-coffee fa-3x" aria-hidden="true"></i>
+			<h3>Project Done</h3>
+			<div class="projectCompleted count" data-tar="8000">0</div>
+		</div>
+		
+
+		<div class="icon">
+			<i class="fa fa-list fa-3x" aria-hidden="true"></i>
+			<h3>Happy Clients</h3>
+			<div class="HappyClient count" data-tar="6800">0</div>
+		</div>
+
+
+		<div class="icon">
+			<i class="fa fa-users fa-3x" aria-hidden="true"></i>
+			<h3>On Going Projects</h3>
+			<div class="onGoingProject count" data-tar="5000">0</div>
+		</div>
+
+	</div>
+
+</body>
+<script>
+
+	let CounterIncrementFunc = () => {
+		// console.log('hello');
+
+		let allCountor = document.getElementsByClassName('count');
+
+		for (let countorBlock of allCountor) {
+
+			let start = +countorBlock.innerHTML;
+			let end = +countorBlock.getAttribute('data-tar');
+
+			// (number/100) *(kitichya-kitichya gap ni chalvay chay/x) == 2000 => x =2000/100
+			let x = end / 200;
+
+			if (start < end) {
+				countorBlock.innerHTML = start + x;
+				setTimeout(CounterIncrementFunc, 800);
+			}
+			else
+				countorBlock.innerHTML = end;
+		}
+	}
+
+	setTimeout(CounterIncrementFunc, 2000);
+
+</script>
+
+</html>

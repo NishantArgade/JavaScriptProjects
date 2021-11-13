@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dragable img</title>
+</head>
+<style>
+	.imgBox{
+		background-image:url('ni.jpg');
+		width: 150px;
+		height:150px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		position: relative;
+		top:25px;
+		left:25px;
+
+	}
+	.whiteBox{
+		width:200px;
+		height: 200px;
+		background-color: rgb(50, 163, 163);
+		display: inline-block;
+		margin:40px;
+	}
+	.boxContainer{
+		margin-top: 3rem;
+		margin-left: 2rem;
+	}
+
+	.hold{
+		border: 2px solid red;
+
+	}
+	.dash{
+		border: dashed rgb(251, 255, 0);
+	}
+</style>
+<body>
+    <!-- // for making dragable element add draggable attribute and set true; -->
+	<div class="whiteBox">
+	 <div class="imgBox" draggable="true"></div>	
+	</div>
+	<div class="whiteBox"></div>
+	<div class="whiteBox"></div>
+	<div class="whiteBox"></div>
+
+</body>
+<script src="javascript.js"></script>
+</html>

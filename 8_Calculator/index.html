@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculator</title>
+	<style>
+		.heading {
+			text-align: center;
+			margin-top: 40px;
+		}
+
+		.calculatorContainer {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: rgba(168, 158, 158, 0.171);
+			border: 2px solid gray;
+			border-radius: 25px;
+			width: 500px;
+			height: 430px;
+		}
+
+		button {
+			width: 111px;
+			height: 57px;
+			background-color: gray;
+			color: white;
+			font-weight: 700;
+			font-size: 1.3rem;
+			border-radius: 20px;
+		}
+
+		#inputScreen {
+			width: 439px;
+			height: 54px;
+			margin-bottom: 25px;
+			background-color: #fff;
+			border-radius: 15px;
+			font-size: 1.5rem;
+			padding-left: 12px;
+
+		}
+		.calTable{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="heading " style="color: rebeccapurple;font-size: 1.4rem;font-weight: 800;">
+		<h1>Basic Calculator</h1>
+	</div>
+	<div class="calculatorContainer">
+		<div class="calTable">
+			<input type="text" id="inputScreen">
+			<table>
+				<tr>
+					<td><button>7</button></td>
+					<td><button>8</button></td>
+					<td><button>9</button></td>
+					<td><button>
+							<-- </button>
+					</td>
+				</tr>
+				<tr>
+					<td><button>4</button></td>
+					<td><button>5</button></td>
+					<td><button>6</button></td>
+					<td><button>C</button></td>
+				</tr>
+				<tr>
+					<td><button>1</button></td>
+					<td><button>2</button></td>
+					<td><button>3</button></td>
+					<td><button>x</button></td>
+				</tr>
+				<tr>
+					<td><button>0</button></td>
+					<td><button>00</button></td>
+					<td><button>.</button></td>
+					<td><button>/</button></td>
+				</tr>
+				<tr>
+					<td><button>10</button></td>
+					<td><button>=</button></td>
+					<td><button>+</button></td>
+					<td><button>-</button></td>
+				</tr>
+
+			</table>
+		</div>
+	</div>
+
+</body>
+<script src="javascript.js"></script>
+
+</html>

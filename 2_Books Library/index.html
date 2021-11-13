@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+
+	<title>NishantLibrary</title>
+
+</head>
+
+<body>
+
+	<!-- Navbar ------------------------->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+		<a class="navbar-brand" href="#">NishantLibrary</a>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				</li>
+			</ul>
+			<!-- --- side search menu ------- -->
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="search" placeholder="Book" aria-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search Book</button>
+			</form>
+		</div>
+	</nav>
+
+	<!-- notify book added or not -->
+	<div class="notify">
+		
+	</div>
+
+	<!-- ------------ Library Name ------------------- -->
+	<div class="container Heading my-4">
+		<h1>Nishant Library</h1>
+	</div>
+
+	<!-- -------- form filling section --------------- -->
+	<div class="container">
+		<form class="formSec">
+			<div class="form-group">
+				<label for="book_name">Book Name</label>
+				<input type="text" class="form-control" id="bookNameInput" placeholder="Enter Book Name">
+			</div>
+			<div class="form-group">
+				<label for="author_name">Author Name</label>
+				<input type="text" class="form-control" id="authorNameInput" placeholder="Enter Author Name">
+			</div>
+
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="selectBox" id="check1">
+				<label class="form-check-label" for="defaultCheck1">Science Fection</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="selectBox" id="check2">
+				<label class="form-check-label" for="defaultCheck2">Coding & Programming</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="selectBox" id="check3">
+				<label class="form-check-label" for="defaultCheck2">Funny</label>
+			</div>
+
+			<hr>
+			<button type="submit" class="btn btn-primary submitBtn">Submit</button>
+			<hr>
+
+		</form>
+	</div>
+
+	<!-- ---------- Display Books ----------------------------------- -->
+	<div class="container displayBooks">
+		<table class="table table-striped table-light">
+			<thead>
+				<tr>
+					<th scope="col">Name</th>
+					<th scope="col">Author</th>
+					<th scope="col">Type</th>
+				</tr>
+			</thead>
+			<tbody id="tableContainer">
+               <!-- books details... -->
+			</tbody>
+		</table>
+	</div>
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+		
+		//books data store tamporarily
+		<!-- <script src="javascript.js"></script> -->
+		//books data store permanontly in local storage.
+		<script src="javascript2.js"></script>
+</body>
+
+</html>

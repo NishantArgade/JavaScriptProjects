@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<title>MyJokes</title>
+</head>
+
+<body>
+	<div class="container ">
+		<h1 class="text-center my-5">My Jokes</h1>
+		<div>
+			<div class="card text-center " style="height: 240px;">
+
+				<div class="card-body bg-dark text-white">
+					<p class="card-text"></p>
+				</div>
+
+				<div class="card-footer text-muted">
+					<button id="next" class="btn btn-warning btn-lg text-white ">Next</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+</body>
+<script>
+	//You can send get request using following three methods : remmonded fetch method for fastest way
+	// get request with xhr:
+	// let xhr = new XMLHttpRequest();
+	// xhr.open('GET', 'https://jsonplaceholder.typicode.com/users', true);
+	// xhr.onload = () => console.log(xhr.responseText);
+	// xhr.send();
+
+	// get request with fetch:
+	// fetch('https://icanhazdadjoke.com', {
+	// 	method: "GET", headers: {
+	// 		Accept: "application/json"
+	// 	}
+	// })
+	// 	.then(reponse => reponse.json())
+	// 	.then(res => console.log(result));
+
+	// get request with async wait
+	async function getResponse() {
+		let response = await fetch('https://icanhazdadjoke.com', {
+			method: "GET", 
+			headers: {
+				Accept: "application/json"
+			      }
+		})
+		let result = await response.json();
+		document.querySelector('.card-text').innerHTML = result.joke;
+	}
+
+	  getResponse();
+	let next = document.getElementById('next');
+	next.addEventListener('click', getResponse);
+
+</script>
+
+</html>
